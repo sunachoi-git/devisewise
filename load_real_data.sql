@@ -1,6 +1,3 @@
--- Run this in Lovable's Supabase SQL Editor (Database -> SQL Editor)
--- Creates the devices table and loads real, sourced MHRA device data.
-
 create table if not exists devices (
   id bigint generated always as identity primary key,
   device_name text not null unique,
