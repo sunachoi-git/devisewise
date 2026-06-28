@@ -1,21 +1,3 @@
-// Supabase Edge Function: search-trials
-// ----------------------------------------
-// Live call to the real ISRCTN API (the UK's WHO-recognised trial
-// registry). This is the ONE source in the stack with a genuine public,
-// key-free API - everything else (MHRA, Yellow Card, NHS pricing) has
-// no API and lives in the `devices` table instead (see load_real_data.sql).
-//
-// HOW TO DEPLOY IN LOVABLE:
-// 1. In Lovable, go to your project's Supabase backend
-// 2. Create a new Edge Function called "search-trials"
-// 3. Paste this file in as index.ts
-// 4. Deploy
-// 5. Call it from your frontend as:
-//      fetch(`${SUPABASE_URL}/functions/v1/search-trials?keyword=hip+replacement`)
-//
-// Docs this is based on (official ISRCTN API spec):
-// https://www.isrctn.com/editorial/retrieveFile/81786542-9920-48a0-8fce-09f8428ab843/37855
-
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 
 const ISRCTN_BASE_URL = "https://www.isrctn.com";
