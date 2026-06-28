@@ -42,12 +42,6 @@ Deno.serve(async (req: Request) => {
   }
 });
 
-/**
- * Very small XML parser for the fields we need: title, ISRCTN ID, status.
- * NOTE: the exact tag names depend on ISRCTN's namespace - the first time
- * you run this for real, console.log(xmlText) to see the actual structure
- * and adjust the regex/tag names below if they don't match.
- */
 function parseTrialsFromXml(xmlText: string): Array<{
   title: string | null;
   isrctnId: string | null;
