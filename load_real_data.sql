@@ -15,7 +15,6 @@ create table if not exists devices (
   created_at timestamptz default now()
 );
 
--- Clear out any existing fake rows before loading real ones
 delete from devices;
 
 insert into devices
